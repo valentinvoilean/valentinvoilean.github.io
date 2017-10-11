@@ -1,0 +1,48 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "arrow-parens": 0,
+    "class-methods-use-this": 0,
+    "comma-dangle": [2, "never"],
+    "global-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "no-mixed-operators": 0,
+    "no-multi-assign": 0,
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-indent-props": 0,
+    "react/jsx-indent": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/no-array-index-key": 0,
+    "react/no-danger-with-children": 0,
+    "react/no-find-dom-node": 0,
+    "react/require-default-props": 0,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "jsx-a11y/label-has-for": "off"
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "API_HOST": true,
+    "__DEV_TOOLS__": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./configs/webpack/webpack.config.common.js"
+      }
+    }
+  }
+}
