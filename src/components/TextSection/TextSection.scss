@@ -1,0 +1,83 @@
+.section {
+  display: flex;
+  flex-direction: column;
+
+  @include susy-breakpoint($bsm) {
+    flex-direction: row;
+
+    &.isRightAligned {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.title {
+  font-size: 14px;
+  color: #A5A5A5;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  font-size: 30px;
+  color: #111111;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.sidebar {
+  width: 100%;
+  text-align: center;
+
+  @include susy-breakpoint($bsm) {
+    flex-grow: 1;
+    text-align: left;
+
+    .isRightAligned & {
+      text-align: right;
+    }
+  }
+}
+
+.textContent {
+  font-size: 16px;
+  color: #4A4A4A;
+  width: 100%;
+  text-align: justify;
+
+  @include susy-breakpoint($bsm) {
+    flex-grow: 1;
+  }
+
+  p {
+    margin-top: 20px;
+
+    @include susy-breakpoint($bsm) {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  b, a {
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0 20px;
+  background: none;
+  border: 1px solid $pure-black;
+  color: $pure-black;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 0;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+}

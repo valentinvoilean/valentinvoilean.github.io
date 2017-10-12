@@ -1,0 +1,97 @@
+.footer {
+  background: $shark;
+  padding: 20px 0;
+
+  @include susy-breakpoint($bmd) {
+    padding: 30px 0;
+  }
+}
+
+.tag {
+  font-size: 20px;
+  text-align: center;
+  color: $pure-white;
+  margin: 0;
+
+  @include susy-breakpoint($bsm) {
+    font-size: 25px;
+  }
+
+  @include susy-breakpoint($bmd) {
+    font-size: 30px;
+  }
+}
+
+.nav {
+  display: block;
+  margin-top: 30px;
+
+  @include susy-breakpoint($bsm) {
+    margin-top: 40px;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    font-size: 12px;
+    padding: 0 10px;
+    display: inline-block;
+
+    @include susy-breakpoint($bsm) {
+      font-size: 14px;
+      padding: 0 30px;
+    }
+
+    @include susy-breakpoint($bmd) {
+      padding: 0 40px;
+    }
+  }
+
+  a {
+    color: $pure-white;
+    letter-spacing: 2px;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.copyright {
+  color: $boulder;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+
+  @include susy-breakpoint($bsm) {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}
+
+.socialIcons {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+
+  svg {
+    height: 15px;
+    margin: 0 8px;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

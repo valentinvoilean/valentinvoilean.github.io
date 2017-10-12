@@ -8,9 +8,7 @@ module.exports = function runtimeGenerator({ symbol, config, context, loaderCont
   const compilerContext = loaderContext._compiler.context;
 
   const iconModulePath = path.resolve(compilerContext, runtimeOptions.iconModule);
-  const iconModuleRequest = stringify(
-    path.relative(path.dirname(symbol.request.file), iconModulePath)
-  );
+  const iconModuleRequest = stringify(path.relative(path.dirname(symbol.request.file), iconModulePath));
 
   const spriteRequest = stringifyRequest({ context }, spriteModule);
   const symbolRequest = stringifyRequest({ context }, symbolModule);

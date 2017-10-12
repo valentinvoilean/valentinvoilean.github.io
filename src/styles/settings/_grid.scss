@@ -1,0 +1,13 @@
+// Breakpoints
+$bxs: 0;
+$bsm: 768px;
+$bmd: 1024px;
+$blg: 1440px;
+$bxl: 1880px;
+
+// Layouts
+$lxs: layout(540px 12 .5 inside fluid isolate);
+$lsm: layout(12 static (35px 25px) inside);
+$lmd: layout(12 static (55px 25px) inside);
+$llg: layout(12 static (70px 30px) inside);
+$lxl: layout(12 static (110px 40px) inside);

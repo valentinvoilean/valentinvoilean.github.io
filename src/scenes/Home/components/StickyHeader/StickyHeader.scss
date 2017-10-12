@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+}
+
+.stickyHeader {
+  height: 75px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba($pure-black, 0);
+  transition: background .5s;
+  width: 100%;
+
+  @include z($zelements, header);
+
+  @include susy-breakpoint($bsm) {
+    height: 95px;
+  }
+
+  &.isSticky {
+    position: fixed;
+    background: rgba($pure-black, 0.9);
+  }
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+}

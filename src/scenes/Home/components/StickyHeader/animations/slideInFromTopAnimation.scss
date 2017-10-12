@@ -1,0 +1,24 @@
+$transition-length: 250ms;
+$transition-eq: ease-out;
+
+.enter {
+  transform: translate3d(0, -100%, 0);
+}
+
+.enter.enterActive {
+  transform: translate3d(0, 0, 0);
+  transition: transform $transition-length $transition-eq;
+}
+
+.exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.exit.exitActive {
+  transform: translate3d(0, -100%, 0);
+  transition: transform $transition-length $transition-eq;
+}
+
+:export {
+  transitionlength: $transition-length;
+}

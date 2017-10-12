@@ -1,0 +1,18 @@
+/**
+  Z-Index Management For Complex Layouts
+  Usage: @include z($zelements, modals);
+ */
+
+@mixin z($list, $element) {
+  $z-index: index($list, $element);
+
+  @if $z-index {
+    z-index: $z-index;
+  }
+
+  @else {
+    @warn "There is no item #{$element} in this list; choose one of: #{$list}";
+  }
+}
+
+$zelements: header, layer, mainmenu, hamburger;

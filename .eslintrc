@@ -1,48 +1,205 @@
 {
-  "extends": "airbnb",
-  "env": {
-    "jest": true
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "jasmine"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "rules": {
-    "arrow-body-style": 0,
-    "arrow-parens": 0,
-    "class-methods-use-this": 0,
-    "comma-dangle": [2, "never"],
-    "global-require": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/no-named-as-default": 0,
-    "import/prefer-default-export": 0,
-    "indent": 0,
-    "linebreak-style": 0,
-    "no-mixed-operators": 0,
-    "no-multi-assign": 0,
-    "no-plusplus": 0,
-    "no-underscore-dangle": 0,
-    "react/forbid-prop-types": 0,
-    "react/jsx-closing-bracket-location": 0,
-    "react/jsx-first-prop-new-line": 0,
-    "react/jsx-indent-props": 0,
-    "react/jsx-indent": 0,
-    "react/jsx-no-target-blank": 0,
-    "react/no-array-index-key": 0,
-    "react/no-danger-with-children": 0,
-    "react/no-find-dom-node": 0,
-    "react/require-default-props": 0,
-    "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
-    "jsx-a11y/label-has-for": "off"
-  },
-  "globals": {
-    "window": true,
-    "document": true,
-    "API_HOST": true,
-    "__DEV_TOOLS__": true
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./configs/webpack/webpack.config.common.js"
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
       }
-    }
+    ],
+    "no-alert": [
+      "error"
+    ],
+    "no-dupe-args": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-empty": "error",
+    "no-ex-assign": "error",
+    "no-extra-boolean-cast": "error",
+    "block-scoped-var": "error",
+    "curly": "error",
+    "default-case": "error",
+    "dot-location": [
+      "error",
+      "property"
+    ],
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
+    "no-extend-native": "error",
+    "no-extra-bind": "error",
+    "no-extra-label": "error",
+    "no-fallthrough": "error",
+    "no-labels": "error",
+    "no-lone-blocks": "error",
+    "no-multi-spaces": "error",
+    "no-redeclare": "error",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "no-useless-call": "error",
+    "no-undefined": "error",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "computed-property-spacing": [
+      "error",
+      "never"
+    ],
+    "eol-last": "error",
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true
+      }
+    ],
+    "max-statements-per-line": [
+      "error",
+      {
+        "max": 2
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2
+      }
+    ],
+    "no-trailing-spaces": "warn",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "arrow-spacing": "error",
+    "no-spaced-func": "error",
+    "no-whitespace-before-property": "error",
+    "space-in-parens": [
+      "error",
+      "never"
+    ],
+    "space-before-blocks": "error",
+    "space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
+      }
+    ],
+    "no-const-assign": "error",
+    "no-duplicate-imports": "error",
+    "no-useless-constructor": "error",
+    "no-var": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "react/forbid-prop-types": [
+      "error",
+      {
+        "forbid": [
+          "any"
+        ]
+      }
+    ],
+    "react/no-children-prop": "error",
+    "react/no-danger": "error",
+    "react/no-did-mount-set-state": "error",
+    "react/no-did-update-set-state": "error",
+    "react/no-multi-comp": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unused-prop-types": "error",
+    "react/prefer-es6-class": "error",
+    "react/require-default-props": "error",
+    "react/require-optimization": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": false
+      }
+    ],
+    "react/sort-comp": "error",
+    "react/style-prop-object": "error",
+    "react/no-string-refs": "error",
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "react/jsx-boolean-value": [
+      "error",
+      "never"
+    ],
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-curly-spacing": "error",
+    "react/jsx-equals-spacing": "error",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-pascal-case": "error",
+    "react/jsx-tag-spacing": "error",
+    "react/jsx-wrap-multilines": "error",
+    "jsx-a11y/img-redundant-alt": [
+      "error",
+      {
+        "words": [
+          "image",
+          "photo",
+          "picture"
+        ],
+        "components": [
+          "Image"
+        ]
+      }
+    ],
+    "jsx-a11y/no-access-key": "error"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jasmine/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jquery": true,
+    "jasmine": true,
+    "jest": true
   }
 }

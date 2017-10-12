@@ -1,25 +1,10 @@
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 
-const Root = require('./app').default;
+import ReactGA from 'react-ga';
+import Root from './root';
 
-ReactDOM.render(
-  <AppContainer>
-    <Root />
-  </AppContainer>,
-  document.getElementById('app')
-);
+ReactGA.initialize('UA-66691207-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
-if (module.hot) {
-  module.hot.accept('./app', () => {
-    const NewRoot = require('./app').default;
-    ReactDOM.render(
-      <AppContainer>
-        <NewRoot />
-      </AppContainer>,
-      document.getElementById('app')
-    );
-  });
-}
+ReactDOM.render(<Root />, document.getElementById('root'));

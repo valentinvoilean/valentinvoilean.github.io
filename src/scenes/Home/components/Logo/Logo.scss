@@ -1,0 +1,134 @@
+.logo {
+  color: $pure-white;
+  margin-top: 20px;
+  margin-left: 30px;
+  text-align: center;
+  position: relative;
+  opacity: 0.8;
+  cursor: pointer;
+  display: block;
+
+  &:hover { color: $pure-white; }
+
+  @include susy-breakpoint($bsm) {
+    margin-top: 25px;
+    margin-left: 50px;
+  }
+
+  @include susy-breakpoint($bmd) {
+    margin-left: 0;
+  }
+}
+
+.square {
+  transform: rotate(45deg);
+  height: 35px;
+  width: 35px;
+  outline: 2px solid $pure-white;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include susy-breakpoint($bsm) {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+.firstLetter {
+  font-size: 30px;
+  line-height: 38px;
+  width: 35px;
+  text-align: center;
+  display: inline-block;
+
+  @include susy-breakpoint($bsm) {
+    line-height: 50px;
+    width: 45px;
+  }
+}
+
+.surname,
+.firstName {
+  display: inline-block;
+  text-align: right;
+  direction: rtl;
+  position: absolute;
+  font-size: 10px;
+  max-width: 0;
+  overflow: hidden;
+
+  &:first-letter {
+    font-size: 0;
+  }
+
+  @include susy-breakpoint($bsm) {
+    font-size: 12px;
+
+    &:first-letter {
+      font-size: 0;
+    }
+  }
+}
+
+.surname {
+  top: 8px;
+  left: 30px;
+
+  @include susy-breakpoint($bsm) {
+    top: 14px;
+    left: 37px;
+  }
+}
+
+.firstName {
+  top: 19px;
+  left: 30px;
+
+  @include susy-breakpoint($bsm) {
+    top: 25px;
+    left: 37px;
+  }
+}
+
+.logo.enter {
+  transition: opacity .2s;
+  opacity: 1;
+
+  .square {
+    transform: rotate(0deg);
+    width: 70px;
+    transition: transform .2s, width .2s .2s;
+
+    @include susy-breakpoint($bsm) {
+      width: 88px;
+    }
+  }
+
+  .surname,
+  .firstName {
+    max-width: 50px;
+    transition: max-width .2s .4s;
+  }
+}
+
+.logo.leave {
+  transition: opacity .2s;
+  opacity: 0.8;
+
+  .square {
+    transform: rotate(45deg);
+    width: 35px;
+    transition: width .2s .2s, transform .2s .4s;
+
+    @include susy-breakpoint($bsm) {
+      width: 45px;
+    }
+  }
+
+  .surname,
+  .firstName {
+    max-width: 0;
+    transition: max-width .2s;
+  }
+}

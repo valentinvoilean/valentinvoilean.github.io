@@ -1,0 +1,30 @@
+$transition-length: 500ms;
+$transition-eq: ease-in-out;
+
+.enter,
+.appear {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.enter.enterActive,
+.appear.appearActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all $transition-length $transition-eq;
+}
+
+.exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exit.exitActive {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all $transition-length $transition-eq;
+}
+
+:export {
+  transitionlength: $transition-length;
+}

@@ -1,0 +1,103 @@
+@keyframes spin { 100% { transform:rotate(360deg); } }
+
+.field {
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative;
+
+  .message {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.input {
+  background: $alabaster;
+  border: 1px solid $alto;
+  border-radius: 0;
+  appearance: none;
+  color: $shark;
+  height: 40px;
+  transition: all 400ms;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+
+  &[value=""] {
+    background: $alabaster;
+    border-color: $alto;
+    color: $shark;
+  }
+
+  &:focus {
+    border-color: $shark;
+    color: $shark;
+    outline: none;
+  }
+
+  &.error {
+    border-color: $torchRed;
+    color: $torchRed;
+
+    &:focus {
+      background: $cararra;
+      border-color: $shark;
+      color: $shark;
+    }
+  }
+
+  &::placeholder {
+    color: #C1BDC2;
+    font-size: 16px;
+  }
+}
+
+.textarea {
+  @extend .input;
+  height: 150px;
+  resize: none;
+}
+
+span.error {
+  color: $torchRed;
+  font-size: 14px;
+  display: block;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+  background: none;
+  border: 1px solid $pure-black;
+  color: $pure-black;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 0;
+  height: 40px;
+}
+
+.formMessage {
+  font-size: 16px;
+  color: #3e8f3e;
+  display: inline-block;
+  margin-left: 5px;
+
+  &.error {
+    color: #761c19;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+.loadingIcon {
+  fill-color: $shark;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  animation:spin 4s linear infinite;
+}
+
+.buttonMessage {
+  margin-right: 10px;
+}

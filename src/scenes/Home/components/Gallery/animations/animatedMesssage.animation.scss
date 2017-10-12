@@ -1,0 +1,30 @@
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+.base {
+  margin-left: 5%;
+  width: 90%;
+  color: #ffffff;
+  transition: all 0.5s ease-out;
+  text-align: center;
+  font-size: 24px;
+  line-height: 26px;
+
+  @include susy-breakpoint($bsm) {
+    font-size: 44px;
+    line-height: 40px;
+  }
+
+  @include susy-breakpoint($bmd) {
+    font-size: 64px;
+    line-height: 60px;
+  }
+
+  :global(.Cursor--blinking) {
+    opacity: 1;
+    animation: blink 0.7s infinite;
+  }
+}

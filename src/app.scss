@@ -1,0 +1,65 @@
+:global {
+  .container {
+    @include container($lxs);
+    padding: 0 10px;
+
+    @include susy-breakpoint($bsm, $lsm) {
+      width: 720px;
+      max-width: 100%;
+    }
+
+    @include susy-breakpoint($bmd, $lmd) {
+      width: 960px;
+    }
+
+    @include susy-breakpoint($blg, $llg) {
+      width: 1200px;
+    }
+
+    @include susy-breakpoint($bxl, $lxl) {
+      width: 1800px;
+    }
+  }
+
+  .container-desktop {
+    @include susy-breakpoint($bmd, $lmd) {
+      width: 960px;
+      margin: 0 auto;
+    }
+
+    @include susy-breakpoint($blg, $llg) {
+      width: 1200px;
+    }
+
+    @include susy-breakpoint($bxl, $lxl) {
+      width: 1800px;
+    }
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  #root {
+    height: 100%;
+  }
+}
+
+html,
+body,
+main {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
