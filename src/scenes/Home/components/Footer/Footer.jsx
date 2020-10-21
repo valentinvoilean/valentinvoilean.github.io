@@ -42,7 +42,7 @@ export function Footer() {
           </ul>
         </nav>
         <div className={styles.copyright} itemProp="author" itemScope itemType="http://schema.org/Person">
-          ©2017 <span itemProp="givenName">Valentin</span> <span itemProp="familyName">Voilean</span>. All rights
+          ©2020 <span itemProp="givenName">Valentin</span> <span itemProp="familyName">Voilean</span>. All rights
           reserverd.
         </div>
         <div className={styles.socialIcons}>

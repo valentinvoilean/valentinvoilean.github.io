@@ -24,16 +24,13 @@ export function AboutMe() {
         buttonText="Download CV"
       >
         <p>
-          I’m a <b>Microsoft Certified Professional Developer</b> specialised in the client-side or Front End interface,
-          connecting the user with complex backend technologies.
+          I’m a <b>Microsoft Certified Professional Developer</b> specialised on front‑end technologies with 10+ years of professional experience.
         </p>
         <p itemProp="author" itemScope itemType="http://schema.org/Person">
-          In short, I like to call myself a <b itemProp="jobTitle">React developer</b>, since, for the last 2 years I’ve
-          been developing applications with <b>React & Redux</b>.
+          I develop modern, highly interactive, responsive websites & web apps with cutting edge technologies such as React/Redux and AngularJS.
         </p>
         <p>
-          I’m always eager to learn new technologies and passionate about developing great ideas. Love facing challenges
-          and creating successful products.
+          I’m strongly focused on modularity and maintainability and I pay great attention to details.
         </p>
       </TextSection>
 

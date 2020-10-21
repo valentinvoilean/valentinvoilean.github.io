@@ -54,52 +54,29 @@ export class Gallery extends React.PureComponent {
         </Parallax>
 
         <div className={styles.verticallyCenteredContent}>
-          <Typist
-            className={animatedMesssageAnimation.base}
-            avgTypingDelay={70}
-            delayGenerator={this.delayGenerator}
-            onTypingDone={this.displaySocialIcons}
-          >
-            <span>{'Hi!'}</span>
-            <Typist.Backspace count={3} delay={2000} />
-            <span>I’m Valentin.</span>
-            <Typist.Delay ms={2000} />
-            <br />
-            <span className={styles.secondMessage}>
-              Have any <i>cool project</i> in mind ?
-            </span>
-          </Typist>
+          <div className={animatedMesssageAnimation.base}>
+            <span>Valentin Voilean</span>
+          </div>
 
-          <TransitionGroup className={styles.socialIcons} component="div">
-            {this.state.showSocialIcons && (
-              <CSSTransition
-                classNames={socialIconsAnimation}
-                timeout={{
-                  enter: transitionLength,
-                  exit: transitionLength,
-                  appear: transitionLength
-                }}
-              >
-                <div>
-                  <a href={LINKS.email}>
-                    <EmailIcon alt="email" />
-                  </a>
-                  <a href={LINKS.linkedin}>
-                    <LinkedinIcon alt="linkedin" />
-                  </a>
-                  <a href={LINKS.github}>
-                    <GithubIcon alt="github" />
-                  </a>
-                  <a href={LINKS.stackOverflow}>
-                    <StackOverflowIcon alt="stackoverflow" />
-                  </a>
-                  <a href={LINKS.twitter}>
-                    <TwitterIcon alt="twitter" />
-                  </a>
-                </div>
-              </CSSTransition>
-            )}
-          </TransitionGroup>
+          <div className={styles.socialIcons} component="div">
+            <div>
+              <a href={LINKS.email}>
+                <EmailIcon alt="email" />
+              </a>
+              <a href={LINKS.linkedin}>
+                <LinkedinIcon alt="linkedin" />
+              </a>
+              <a href={LINKS.github}>
+                <GithubIcon alt="github" />
+              </a>
+              <a href={LINKS.stackOverflow}>
+                <StackOverflowIcon alt="stackoverflow" />
+              </a>
+              <a href={LINKS.twitter}>
+                <TwitterIcon alt="twitter" />
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className={scrollDownAnimation.base}>

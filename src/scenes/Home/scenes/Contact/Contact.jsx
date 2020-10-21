@@ -24,11 +24,11 @@ export function Contact() {
             </p>
             <p className={styles.info}>
               <LocationIcon height={11} />
-              <span itemProp="address">Barcelona, Spain</span>
+              <span itemProp="address">Brasov, Romania</span>
             </p>
             <p className={styles.info}>
               <PhoneIcon height={11} />
-              <span itemProp="telephone">(+34) 643 317 923</span>
+              <span itemProp="telephone">(+40) 758 864 127</span>
             </p>
             <p className={styles.info}>
               <EmailIcon height={11} />
