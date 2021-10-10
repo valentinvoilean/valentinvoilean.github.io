@@ -33,7 +33,7 @@ export function Contact() {
             <p className={styles.info}>
               <EmailIcon height={11} />
               <a href={LINKS.email}>
-                <span itemProp="email">contact@valentinvoilean.com</span>
+                <span itemProp="email">vvoilean@gmail.com</span>
               </a>
             </p>
           </aside>

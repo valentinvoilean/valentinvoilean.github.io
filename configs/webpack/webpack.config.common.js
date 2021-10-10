@@ -13,7 +13,7 @@ module.exports = {
     app: ['utils/matchmedia-polyfill', '@babel/polyfill', 'normalize.css', 'index']
   },
   output: {
-    path: path.join(rootPath, 'docs/dev'),
+    path: path.resolve(process.cwd(), 'docs/dev'),
     filename: 'js/[name].js'
   },
   module: {
@@ -23,11 +23,11 @@ module.exports = {
         exclude: [/node_modules/, /\.(spec)\.jsx?$/],
         loader: 'babel-loader'
       },
-      { test: /\.(woff|woff2|ttf|otf|eot)$/, loader: 'file-loader?name=fonts/[name].[ext]?v=[hash]' },
+      { test: /\.(woff|woff2|ttf|otf|eot)$/, use: 'file-loader?name=fonts/[name].[ext]?v=[hash]' },
       {
         test: /\.(svg|svg\?embed)$/,
-        exclude: path.join(rootPath, 'src/img'),
-        loader: 'file-loader?name=svg/[name].[ext]?v=[hash]'
+        exclude: path.resolve(process.cwd(), 'src/img'),
+        use: 'file-loader?name=svg/[name].[ext]?v=[hash]'
       },
       {
         test: /\.(svg|svg\?embed)$/,
@@ -39,20 +39,14 @@ module.exports = {
             options: {
               runtimeGenerator: require.resolve('../svg/svg-to-icon-component-runtime-generator'),
               runtimeOptions: {
-                iconModule: path.join(rootPath, 'src/components/LoadSVG/index.jsx')
+                iconModule: path.resolve(process.cwd(), 'src/components/LoadSVG/index.jsx')
               }
             }
           },
           'svg-fill-loader',
-          {
-            loader: 'svgo-loader',
-            options: {
-              plugins: [{ removeTitle: true }, { convertColors: { shorthex: false } }, { convertPathData: false }]
-            }
-          }
         ]
       },
-      { test: /\.(png|jpg|ico|gif)$/, loader: 'file-loader?name=img/[name].[ext]?v=[hash]' },
+      { test: /\.(png|jpg|ico|gif)$/, use: 'file-loader?name=img/[name].[ext]?v=[hash]' },
       {
         test: /\.css?$/,
         use: [
@@ -84,14 +78,24 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]'
             }
           },
           {
             loader: 'sass-loader',
             options: {
-              data: '@import "~susy/sass/susy"; @import "~styles/styles";'
-            }
+              sassOptions: {
+                includePaths: [path.resolve(process.cwd(), 'src')],
+              },
+            },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                path.resolve(process.cwd(), 'src/styles/styles.scss'),
+                path.resolve(process.cwd(), 'node_modules/susy/sass/_susy.scss')
+              ],
+            },
           }
         ]
       }
@@ -118,7 +122,8 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [path.join(rootPath, 'src'), 'node_modules']
+    modules: ['src', 'node_modules'],
+    preferRelative: true
   },
   target: 'web',
   performance: {
