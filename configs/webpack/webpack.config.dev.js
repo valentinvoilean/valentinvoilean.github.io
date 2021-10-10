@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   entry: {
     ...webpackCommonSettings.entry,
-    app: ['utils/matchmedia-polyfill', '@babel/polyfill', 'normalize.css', './src/index']
+    app: ['utils/matchmedia-polyfill', 'normalize.css', './src/index']
   },
   plugins: [
     ...webpackCommonSettings.plugins,

@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'cheap-source-map',
   context: rootPath,
   entry: {
-    app: ['utils/matchmedia-polyfill', '@babel/polyfill', 'normalize.css', 'index']
+    app: ['utils/matchmedia-polyfill', 'normalize.css', 'index']
   },
   output: {
     path: path.resolve(process.cwd(), 'docs/dev'),
@@ -43,7 +43,7 @@ module.exports = {
               }
             }
           },
-          'svg-fill-loader',
+          'svg-transform-loader',
         ]
       },
       { test: /\.(png|jpg|ico|gif)$/, use: 'file-loader?name=img/[name].[ext]?v=[hash]' },
