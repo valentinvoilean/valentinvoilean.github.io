@@ -16,7 +16,6 @@ module.exports = {
     ...webpackCommonSettings.plugins,
     new webpack.EnvironmentPlugin({
       BROWSER: true,
-      RECAPTCHA_SITE_KEY: '6LfY-cQSAAAAAMENn6BAoCI6ZW5pNpSb_8yYqFz1'
     })
   ]
 }

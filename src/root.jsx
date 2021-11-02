@@ -10,7 +10,7 @@ import configureStore from './store/configureStore';
 const store = configureStore();
 
 const Root = () => (
-  <GoogleReCaptchaProvider reCaptchaKey={process.env.RECAPTCHA_SITE_KEY}>
+  <GoogleReCaptchaProvider reCaptchaKey="6LcacAwdAAAAAFbzG8rZhQBeXcpK2uFcjcJTC-5v">
     <Provider store={store}>
       <App />
     </Provider>

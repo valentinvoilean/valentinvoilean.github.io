@@ -19,7 +19,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.EnvironmentPlugin({
       BROWSER: true,
-      RECAPTCHA_SITE_KEY: '6LfY-cQSAAAAAMENn6BAoCI6ZW5pNpSb_8yYqFz1'
     })
   ],
   devServer: {
